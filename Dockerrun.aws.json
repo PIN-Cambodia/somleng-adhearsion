@@ -38,7 +38,7 @@
       "environment": [
         {
           "name": "SECRETS_BUCKET_NAME",
-          "value": "somlengsecrets"
+          "value": "somlengappsecrets"
         },
         {
           "name": "SECRETS_FILE_NAME",
