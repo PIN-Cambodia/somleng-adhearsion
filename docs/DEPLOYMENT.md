@@ -1,19 +1,10 @@
 # Deployment
 
-## Heroku
-
-For testing purposes we recommend deploying to Heroku.
-
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
-
 ## AWS Elastic Beanstalk
 
 ### Create a VPC
 
-1. Allocate an elastic IP address which will be used for your NAT Gateway for your private subnet. The NAT Gateway is used to enable instances in a private subnet to connect to the Internet or other AWS services, but prevent the Internet from initiating a connection with those instances.
-2. Create a new VPC using the wizard with a public and private subnet. Assign the elastic IP that you created above for the NAT Gateway.
-3. Add an additional public and private subnet in a different availability zone. (In total you should have 4 subnets in your VPC. 1 private, and 1 public for each availability zone.
-4. Connect both of your public subnets to the internet gateway, and both of your private subnets to the NAT Gateway.
+Follow [this guide](https://github.com/dwilkie/twilreapi/blob/master/docs/AWS_VPC_SETUP.md) to setup a VPC for your AWS account.
 
 ### Create a new Elastic Beanstalk Application
 
@@ -70,16 +61,13 @@ By default the ELB security group will be configured to only allow inbound and o
 
 To update the ELB security group browse to the Load Balancer from the AWS EC2 Console the click the link to the ELB security group. Edit the inbound rule to allow traffic on TCP port `9050`. Edit the outbound rule to allow traffic on TCP port `9050`.
 
-### Configuration
+### Adhearsion Configuration
 
-Upload configuration
+Follow [this guide](https://github.com/dwilkie/freeswitch-config/tree/master/docs/S3_CONFIGURATION.md) to securely store Adhearsion ENV Variables on S3.
+
+Upload and download your configuration with the following commands
 
 ```
 $ aws s3 cp somleng_config.txt s3://SECRETS_BUCKET_NAME/somleng_config.txt --sse
-```
-
-Dowload configuration
-
-```
 $ aws s3 cp s3://SECRETS_BUCKET_NAME/somleng_config.txt .
 ```
