@@ -11,7 +11,7 @@
   "containerDefinitions": [
     {
       "name": "somleng",
-      "image": "dwilkie/somleng",
+      "image": "dwilkie/somleng:app.somleng.org",
       "essential": true,
       "memory": 995,
       "mountPoints": [
