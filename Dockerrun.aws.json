@@ -11,7 +11,7 @@
   "containerDefinitions": [
     {
       "name": "somleng",
-      "image": "dwilkie/somleng",
+      "image": "dwilkie/somleng:somleng.ews1294.info",
       "essential": true,
       "memory": 995,
       "mountPoints": [
