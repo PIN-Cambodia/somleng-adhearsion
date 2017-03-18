@@ -1,1 +1,15 @@
 language: ruby
+deploy:
+- provider: elasticbeanstalk
+  edge: true
+  access-key-id:
+    secure: "lQRbs7A6R2iO2uCb4eJlx9mVpIht+dEomrM0BRjPw/1tx4QiD7uODLSOlAdUqiCQUmoP7QZrZTm/dh7T40/b2mazhuhOS3JDmW5ZX0ZmiCmcqYSyscBY9x2zMvVwOlcp64ZDs+6yCkN+gHEW7RyBqfy2Ku+XYy8zWv1Xikntc49iQhUBCXzofA9QZ/7KjsAEvetWyiSf7wA5Q5aGNGNR5dsKnuVWXuhp7sny1o6ZdkltBdURTDV2G5aS/i99ltYn+F2iMLA7IM9+oCUHaXayfInVes3QO0Q0q5ZcJL5KLez7Adyx4x3pHps7ZmAn2PB0pad8xb6/mQqZNjf1L5BxPnZuwJVX7mFOaDrTIGh4/mQwcZnDuMPS820/Pz8SCp+bPd7zgIqpZ1aQdIsAYZTpktvZ3eaLFzRfocIcbZajYP3xfqdTfDJoT4VyUXaYl1Pp+m1zyDShognvyECUiAQj6j1AZ1ZFS8jqMaqf3wsh+TTMJMmXsPcAr6ypZMlc0+kKglG+/Yc84LUxjNY0BlERn4Zcz+GbNn9KqFqmSo8+2uRJbtT1a3QI814cyw04mnbAtqOWKzDwo3/HesJCnVICcQhOi8Q10Mu9OryxINFxUv+I5uI9AdDZ8t03/k4PqqKjOvwtH1cBoQs9bMWVLvv12X2PfOFjPxz5/xPY6oWhiWo="
+  secret-access-key:
+    secure: "0YptyD8egdjiR3+gbq/KJKhpB4fZhPv8Zhp5+GRmX/6Q9nY62OJ6kwmkuTgJWYGjlKAhIUu9sQLRehTU0iUT/YZmlgfBiEW6OLnKzMplBKoYgIUtm/h6SkcEfFjQT31CwNJ5IWqWe+V7i0v2Oblw8Nd6jkUl+mdV7hyHMo7PMAOHvIAuxtrJuwGf35FmKKsmNV29XVuHvOVsBouR6HUJE5/ORe/3MiJzhfRDUt2wgw6aV712dh87wJMqNTqwkgtGDALw73hM9fAH9FmSyj+AZXx/YfnfU9G9wVgjtwLcDVa5rGVRvnSnYg/VasblV8U3JKPhUFncO/Q8jCf7Tel0/rG/G4W2WlW3yw5/mMfoKLVLa1ucszk026IeeFltiFH7Tyk4ShEVYWVBMtcv06Fm47kdLjpv/hvsAm61f/Hj3gR7PbwaXdS6k5WHPK9vYio1KfP8bXeIoqH3Jj76kfAN+WuhpIrCGoQBMVb735d5gqnlAtKK3h2dvMVYvpLcFD3TcScNFKsJPxIAT4GDhhXpQ9LCAEjik5tsH3QN+gNS8IUy4gKtx0y69ZeRnt2yShtSH+gjijtgNDmIc+GnfTZS9qklP/Sm5jZr8vB2rm3vLqOBulBj6tMx/N63/z0ugIktqUbFpYtaUNmo73ijDu+Iyr0fURpaFJxu2a2M03stpkU="
+  region: ap-southeast-1
+  app: somleng-adhearsion
+  env: somleng-adhearsion
+  bucket_name: somlengci
+  on:
+    repo: dwilkie/somleng
+    branch: app.somleng.org
