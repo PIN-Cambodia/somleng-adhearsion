@@ -7,7 +7,7 @@ deploy:
   secret-access-key:
     secure: "0YptyD8egdjiR3+gbq/KJKhpB4fZhPv8Zhp5+GRmX/6Q9nY62OJ6kwmkuTgJWYGjlKAhIUu9sQLRehTU0iUT/YZmlgfBiEW6OLnKzMplBKoYgIUtm/h6SkcEfFjQT31CwNJ5IWqWe+V7i0v2Oblw8Nd6jkUl+mdV7hyHMo7PMAOHvIAuxtrJuwGf35FmKKsmNV29XVuHvOVsBouR6HUJE5/ORe/3MiJzhfRDUt2wgw6aV712dh87wJMqNTqwkgtGDALw73hM9fAH9FmSyj+AZXx/YfnfU9G9wVgjtwLcDVa5rGVRvnSnYg/VasblV8U3JKPhUFncO/Q8jCf7Tel0/rG/G4W2WlW3yw5/mMfoKLVLa1ucszk026IeeFltiFH7Tyk4ShEVYWVBMtcv06Fm47kdLjpv/hvsAm61f/Hj3gR7PbwaXdS6k5WHPK9vYio1KfP8bXeIoqH3Jj76kfAN+WuhpIrCGoQBMVb735d5gqnlAtKK3h2dvMVYvpLcFD3TcScNFKsJPxIAT4GDhhXpQ9LCAEjik5tsH3QN+gNS8IUy4gKtx0y69ZeRnt2yShtSH+gjijtgNDmIc+GnfTZS9qklP/Sm5jZr8vB2rm3vLqOBulBj6tMx/N63/z0ugIktqUbFpYtaUNmo73ijDu+Iyr0fURpaFJxu2a2M03stpkU="
   region: ap-southeast-1
-  app: somleng-adhearsion
+  app: somleng
   env: somleng-adhearsion
   bucket_name: somlengci
   on:
