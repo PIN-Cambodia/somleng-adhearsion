@@ -11,7 +11,7 @@
   "containerDefinitions": [
     {
       "name": "somleng",
-      "image": "dwilkie/somleng",
+      "image": "dwilkie/somleng:somleng.unicef.io",
       "essential": true,
       "memory": 950,
       "mountPoints": [
@@ -38,7 +38,7 @@
       "environment": [
         {
           "name": "SECRETS_BUCKET_NAME",
-          "value": "somlengsecrets"
+          "value": "unicef-io-somleng-config"
         },
         {
           "name": "SECRETS_FILE_NAME",
