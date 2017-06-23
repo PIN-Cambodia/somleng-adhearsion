@@ -1,4 +1,18 @@
 language: ruby
+deploy:
+- provider: elasticbeanstalk
+  edge: true
+  access-key-id:
+    secure: "I7uhW41ZJ2WL4yliqq6zs7BUdjCkQ7haARRupgjoVwYebBDnZSBqvv+Xmg14IZ7YUIW6TgP9o+kLBf5XC0un1PN/v7gvgXdfiAdekMHH1ordLGeajgI+g7HOVKm/wAuYSmoov/HEP8+9YrOT7VHsdvKcxRnGLs2oWtnKA5X3ToHtNNaD6xx8i/upjF0+HfEBraFKMy0LoZrSnsLFLlp1X5biMoV+SCM1ziDLQDvFyN16uDzdcHrExDrfOyK70w4m5Wp2W2+u7Y1oPhu2rp6LLYs1jLHJiXK7lBsFl8mAcXhj3tA/x57Yf47rQ3O0GEVQSqqjAs4+74z/O6GewK378acidYq881I4CB1VXLNcxUqbVdG0d/BYJRcGvjDIZyrPEWtz1RIfGR7LI9oyg2eRlzQGBTVsj5R/jYPzwFsQudML/yj1N3Q0a60lInC4SY8da0DC5hDB5EpVmzMmZ20dwvNiHYuS90t9Po9Wzh/fa8KFyCz93pLLJdgL1icxV2qdu24JFg0KBRZdtsbdKmwD9oUh5BmLVuYcCEzBcO83ILvTx3Csex5lvE/epZADebY/cN2n2ibxxse3IZni/3WwDvbESS5ZpJMp4Bmu47br8WnLi8kVLrRg1luEXRiDNbWl+gMCDF0KxjERzjX6uCsJ/sehNRYbG2Vp1PAPqiEVD2Y="
+  secret-access-key:
+    secure: "0fJ+5IIYf3Zkrl/7z9dM6CpYpwPpTSUcr9xLEyjQdRhhQnOXQulzhIiFpvgTP+9GVCQcStnTXT+WJoK+ORn3AlPwXiNnmnv8qrZg+QhbQJYtJ2PtlKwCsMOKDFosS3+RqUo31sjMX+lBRtV4Mjo0rilsd0lY/NPqRh6ic58+xqKUixeUOhO6wSs/xqklE3fghj0mB5PGt1Lsm4PjNFH2SniSLHS4MD6loy62CbGd6Y3cFo7Y14Vy4r8tb5Fk140h4ig0/Agqx11lyYcjK+Mx7iQs4dXvDXF5A4t/4iZrFoVLeNOWJqPYe8l24e25XOZh+7na1ef/VTi3BbvcN+nfWmMaOSiC0MzZ3jgdiqhoNqw1HDjVabk4md1UedDWqAN/fTRfxX0RFnkylexeQ0KDLJZUDQgwO3sW114N4w4c1Lrstw9yYm93G7uWUY4UiWAx0j8IexcIPBdyr/0ZqrptZSFAGqWsViyD2LBao5ZNUQAOpDC+YjELfIjrLloL2xCDVFHj2G8ikYXymK1hmNEb+M6gRXJFzLc26LBRoiuaZYoxUHpWPqrQ24Hh0lh0wyr3BHkY6HR0MtDveVs87VKJNn+d9zkI29abzVRMroe1xe3tDNtlXUQB/Whm8RYCVmgcuen4cwWDrEHsm+0KK5YOHEGVwVGp87EoSyp2vw3jp0k="
+  region: ap-southeast-1
+  app: somleng
+  env: somleng
+  bucket_name: unicef-io-travis
+  on:
+    repo: dwilkie/somleng
+    branch: somleng.unicef.io
 addons:
   code_climate:
     repo_token:
