@@ -40,17 +40,38 @@ class DrbEndpoint
 
   private
 
+  def notify_phone_call_event!(phone_call_id, event_type)
+    if phone_call_events_url
+      event_url = phone_call_event_url(
+        :phone_call_id => phone_call_id,
+        :event_type => event_type
+      )
+
+      request_options = {}
+      basic_auth, url = Adhearsion::Twilio::Util::Url.new(event_url).extract_auth
+      request_options.merge!(:basic_auth => basic_auth) if basic_auth.any?
+
+      HTTParty.post(url, request_options)
+    end
+  end
+
+  def handle_event(event, options = {})
+    event_details = parse_event(event)
+    logger.info("Handling Event: #{event_details}")
+    notify_phone_call_event!(event_details[:call_sid], options[:phone_call_event_type])
+    event_details
+  end
+
   def handle_event_ringing(event)
-    logger.info("handle_event_ringing: event: #{event}")
+    handle_event(event, :phone_call_event_type => :ringing)
   end
 
   def handle_event_answered(event)
-    logger.info("handle_event_answered: event: #{event}")
+    handle_event(event, :phone_call_event_type => :answered)
   end
 
   def handle_event_end(event)
-    event_details = parse_event(event)
-    logger.info("handle_event_end - event details: #{event_details}")
+    event_details = handle_event(event, :phone_call_event_type => :completed)
     notify_status_callback_url(event_details) if !answered?(event_details)
   end
 
@@ -382,5 +403,18 @@ class DrbEndpoint
 
   def default_disable_originate
     ENV["AHN_SOMLENG_DISABLE_ORIGINATE"]
+  end
+
+  def phone_call_events_url
+    ENV["AHN_SOMLENG_PHONE_CALL_EVENTS_URL"]
+  end
+
+  def phone_call_event_url(interpolations = {})
+    if event_url = phone_call_events_url && phone_call_events_url.dup
+      interpolations.each do |interpolation, value|
+        event_url.sub!(":#{interpolation}", value.to_s)
+      end
+      event_url
+    end
   end
 end
