@@ -19,5 +19,5 @@ deploy:
     env: somleng
     bucket_name: unicef-io-travis
     on:
-      repo: dwilkie/somleng
+      repo: somleng/somleng
       branch: somleng.unicef.io
