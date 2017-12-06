@@ -22,3 +22,4 @@ deploy:
     on:
       repo: somleng/somleng
       branch: somleng.unicef.io
+      condition: $DOCKER = 1
