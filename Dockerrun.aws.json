@@ -3,7 +3,7 @@
   "containerDefinitions": [
     {
       "name": "somleng",
-      "image": "dwilkie/somleng:somleng.ews1294.info",
+      "image": "dwilkie/somleng",
       "essential": true,
       "memory": 950,
       "portMappings": [
