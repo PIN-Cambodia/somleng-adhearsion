@@ -21,3 +21,4 @@ deploy:
     on:
       repo: somleng/somleng
       branch: somleng.ews1294.info
+      condition: $DOCKER = 1
