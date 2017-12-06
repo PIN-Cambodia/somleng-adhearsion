@@ -3,7 +3,7 @@
   "containerDefinitions": [
     {
       "name": "somleng",
-      "image": "dwilkie/somleng:somleng.unicef.io",
+      "image": "dwilkie/somleng",
       "essential": true,
       "memory": 950,
       "portMappings": [
