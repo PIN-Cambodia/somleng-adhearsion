@@ -24,4 +24,3 @@ deploy:
     on:
       repo: somleng/somleng-adhearsion
       branch: somleng.unicef.io
-      condition: $DOCKER = 1
