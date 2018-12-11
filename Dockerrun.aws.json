@@ -3,7 +3,7 @@
   "containerDefinitions": [
     {
       "name": "somleng",
-      "image": "somleng/somleng-adhearsion",
+      "image": "pincambodia/somleng-adhearsion",
       "essential": true,
       "memoryReservation": 1024,
       "portMappings": [

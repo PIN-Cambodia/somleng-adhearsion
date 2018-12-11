@@ -5,16 +5,15 @@ services:
 addons:
   apt:
     packages:
-      - docker-ce
+    - docker-ce
 env:
   global:
   - AWS_REGION=ap-southeast-1
-  - CC_TEST_REPORTER_ID=dda6e39fff92f03327b728944253d3a58162a83e69a45f10918750786309a26a
-  - CODECOV_TOKEN=cbfe3a70-5a7b-49c6-87d9-a955ec96900e
+  - CC_TEST_REPORTER_ID=9962bc6b09c6056784addb3115813b01b9a7ee03e409bc2c633cb211d07f3408
   # AWS Credentials
-  - secure: VehVchZV3gPboMqvMBsiFLqDvwFaFI1fPCWiwMsWDvh2y150jhDY3SBfSa25gSbfbJXb8Coyg+NBpCeHwZssoFXRd+3Ve7FTXasdHcHmxSkuuIGfY+iWWL4dfWgnB6k/A9ksGESUMsdHd7U4esC8CLlUDSsHYlbybYJZFCQKDLsqfpM+rFLhGlmCJknH6ewlgDOjwSjCYPjAPiba/TOIkHX6o0Q7rdZk/NvxHOg7klSTkr6YhCqp+jtkwSQhAoB3A6ZolbXCtoELkpzIDUkqTT1HUFU9p3+ZxHDxts7hcfJm6LYkA8O46Rq08ZK4SyWY3CkDdOi+YEIRdWSZnfSLD6aOfJhabIyHSc0g8hpD8fDo//nayImG2JNtFYcbs5rqffAbitv3w3wDjA5DLLMOLe05bJHqGw5BlVDwJRKqRIn16Ty7Ihzj6NLKqD87O3PBbpNbtwOWLdBBqYpi9i91G2gpBwu7fJRsh7r1uBLDmlCt+GIcuEsC2k+nKO1S1bv2TZMrIW8OkSyI6WobYXcgpUS7n8HnTEt0a+of6bpgmo1b6p6xGjh8oTD2MVQ7HCBvxp8iH9ZcosCgDPR446hheXMfA4EnwrFbpJpMUzrpX3rr4vjYQ9VFUKGMiI1dmJVmx4BUE7pwvkUq1RDZ1fnPOgL0vk7B9DFESg0IpQSMRpw=
+  - secure: Q45kN84Iw57MfH3oOMDjCdZIJWdvBxIqOfWUyN1kGB9Y613ZdY429eLBHUkZcScrVO/Rj6m8Fm8eH8ZbgSroWEd8pCr7ELYYxI/wSp6BxAXtsoJQk0h5GolaMmAuRGFCbwe1zJuWcFXg2oh5rH92P4HunauWYmizJbztx83+Vmp051NSDCYRCVZHMCuwM6c65CMryRgq1+ZlUMQa2oJ8G3BC2VDwkteVoyfjhKL/IsIpoutulze63wc6jneMFXVHY7Mwk7pgMg7jYECnZwhUpOgQ3ZOwhXys82vOTkav7IbRvsxoeVtGuvgmKvcPckYORmIJrbOdKBY3x7bO7JCsUnczKGqPh1xEBsevsXbxP1/HPbF0yZocNGN3JTWWAHrGVN00dvPn1tUW1uogSO/H35fFCPfwB5ilgfyoUxXXMRqHvjVV0jG4wGTsMDecF/w8GJrGZXuS4Ql2THjjmKgvPSvITdjJqOn3Ryb/mEwL1IkGNG4TJF86Oi3wuQvF8tPX6vaS5ft4zae310ixDDEFsnD5VV+qWgA6UBkoCNjo+0YZwdLLCgOBkz/b68bw7YM4dzK3Py6sbbbhBIJ0t1QI8wuT0/FFP6OsDbkawwO1wxduRausTlLjEgECll4pipWmf1Q54Q1CpQ0R68mUeatdkks/LwBKBCTENu9DAWDjnRE=
   # Docker Credentials
-  - secure: zILKZ5GsYfZVq0u+qu51hDsujO1RKRVXFq7J8qF7mloAPY9J7Lh+2HJW/7haK5FTlT8kCYsZyEGJ6z6y9LmOIBumq+hKygqkLa5CiyC7Cd2Tmik5t2KDWYqvK59B5DlEy+JdFNlkdj3Hh9yH5+g5u9/PTdZs8vM216z/Olo8rYAZnRLw40FD40UggzmKJk/Tj9FwWb313dxlYT+oT564BUt2fd1H2fglkGtZWnRGNCN1zPhFPAd6HH5+KJvcvNmMoV6oRK6dmOi+zx63RXswc6TUUgI4BYz2Ctrq6azpQrwpkqeo0Td/ctH1lhMtbit2qTErLPm87VMHjH3Begmkecbir2RJ1sEDMyNisfdNlIv/Gsu1T+qXeM8VZeoArWYVBegxZSk4rqEFq3UvxzoyO+DoUQI/1jlRDFwqFeeCIO3cvo32fvz2DHI29bn4o0I3WAqbD1pEUhTaVgg2UzC0D8kE7arEOuBW4yiitMAT1G3fbl1d1jWyCkvw93jZxZtG5QT/9Neu9/K5edwrU+YDrf9H8pIJIfAvs3dubLRphxhAOmLXnICoFf8vvjC2MkpkUT6vl/cuw7R1JrO4Vkwt9Lzx41QLlZXx5l/wzPHf2j/0h/e2734jDgm41Xg+GwCpGJ66xiw+AQYn1A88o8yx52L3sxyzv8LYRd3DMn/PNCk=
+  - secure: NRLY7D93Sf8NHDGogA3Y06WBU08gEVHc52zsRIXVXRkyU2zYJMaDvGJvshxupjFkSRvT+23HlzVxfxU0rFldv5SugBIZ3XsCiHr/RlHuKGX2YYxb/qImoXpmmNe/ZEJLb0IElmGSHdwfN7aoDF/Z6lzKC89gXbK4QQphsQunnzgFiN9UCLa1IYPlQMyfhhILGbDDzBg4CKOuEehw2KVg2NjcYV9SlThBesVfdjtQV6P3QxX1wO77FDlF+q/F36/Ox/UKQJe0PAGmeuS3Bu9JQQcNGg8lQf7BMeAFiY/JOQx7ViFpbahMovEiuNVgV3WmpqJM6Q/nW2btfcJz7AtthcDx0lmG5+ZTsV/5R1p+5+z/giHplERT6QKpysywVo5vJ5ky05DHxU+8CcAOqozE8ljsbImvkpFVfmbFPuyFWb+pDGpl0Fv2BQu0qCwke0jwBjcBt8kOl2WuxhRhnD/py11fyC2ysE0ncd5SCY9GqLd/++7vrOMUvncY92R9rw14JBFRNe4pz/HfNuMb+Vt48QAQhtMxEiW/gaipVMN97LqfypC0uY6laNvVFO9RpNgkSwuVWARKFW7MkCl7r7HWVeTYQh3dSJoRMKN8C8jx1ZmFjXbrrMyZUAwCkjJycSatP/hukWsiGe6oIwrjb7CazxWBVvtmNMSkUHCMOMN5/zg=
 before_install:
 - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64
   > ./cc-test-reporter
@@ -25,13 +24,13 @@ before_script:
 after_success:
 - "./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT"
 - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-- docker build -t somleng/somleng-adhearsion:latest "https://github.com/$TRAVIS_REPO_SLUG.git#$TRAVIS_BRANCH"
-- docker push somleng/somleng-adhearsion
+- docker build -t pincambodia/somleng-adhearsion:latest "https://github.com/$TRAVIS_REPO_SLUG.git#$TRAVIS_BRANCH"
+- docker push pincambodia/somleng-adhearsion
 deploy:
 - provider: elasticbeanstalk
   app: somleng-adhearsion
   env: somleng-adhearsion-webserver
   region: ap-southeast-1
-  bucket_name: deploy.somleng.org
+  bucket_name: deploy.ews1294.info
   on:
     branch: master
