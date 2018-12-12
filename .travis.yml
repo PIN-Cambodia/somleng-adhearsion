@@ -1,24 +1,36 @@
 language: ruby
-env:
-  - START_SIMPLECOV=1
+cache: bundler
+services:
+- docker
 addons:
-  code_climate:
-    repo_token:
-      secure: "riZtfOmLGpxlzZ9FBIpyJ6yVVznEeiRdRilUIF3SpY9Hq0ZiWlpklQZKM5piw6XI2VKfz/b59Nwc2fFFZfNKD2iHZAc546T6sVo07cGiZ5Rvz6DZA/11X2fQ90N3bjJs+vOTE9pAdtIqIqYdV7JtDVsDdcaU3R2Xhct4WmWKG94SMDKsPr74LDtZX8DfhZumwYWCEwpRzs4HSZ61/2+maxZqiRY4f3X47K2xnhBL53EE+mqyTxc+N7HowWrYBQlpOpHscBXwnHb6hnO63lC4FIa0M1ZXUKAY707Ixfv+cgvZq3Spjsp6KCAYIqa0EFa3Di21vxdya8S78Zr7OzGzswLBwDJ+rBy0jOEpleIcfC5OakLJw4mfog4jsOpNcDTHH/2yvYCw9iIFXkfU6ctOzXX6MyljtTJ7rKgnotOoa4zTxzcCqUcOALMQT5qaoxfj6VHu88epoJT8b09YVdwnz7w2rrvu5REF5XURWvoKuyA6WqPSH21R9WA9+Ec3zqdoJ5o0HRio2F4JYI/dxf7cLK53WzW7YhopuVdkzoCVY1H17NcAklDR7Lr8vxd0RhFT93w/ofWs+D/TAxmaJi7M/NSIvwKfeFRfhjb3NRort8Iv+QE/2zEovGGhahemTbUcJ+hRmgPN3+mYQUf0Q4AS60G4tecQBFTVFGS2/7Ky9pk="
+  apt:
+    packages:
+    - docker-ce
+env:
+  global:
+  - AWS_REGION=ap-southeast-1
+  - CC_TEST_REPORTER_ID=9962bc6b09c6056784addb3115813b01b9a7ee03e409bc2c633cb211d07f3408
+  # AWS Credentials
+  - secure: Q45kN84Iw57MfH3oOMDjCdZIJWdvBxIqOfWUyN1kGB9Y613ZdY429eLBHUkZcScrVO/Rj6m8Fm8eH8ZbgSroWEd8pCr7ELYYxI/wSp6BxAXtsoJQk0h5GolaMmAuRGFCbwe1zJuWcFXg2oh5rH92P4HunauWYmizJbztx83+Vmp051NSDCYRCVZHMCuwM6c65CMryRgq1+ZlUMQa2oJ8G3BC2VDwkteVoyfjhKL/IsIpoutulze63wc6jneMFXVHY7Mwk7pgMg7jYECnZwhUpOgQ3ZOwhXys82vOTkav7IbRvsxoeVtGuvgmKvcPckYORmIJrbOdKBY3x7bO7JCsUnczKGqPh1xEBsevsXbxP1/HPbF0yZocNGN3JTWWAHrGVN00dvPn1tUW1uogSO/H35fFCPfwB5ilgfyoUxXXMRqHvjVV0jG4wGTsMDecF/w8GJrGZXuS4Ql2THjjmKgvPSvITdjJqOn3Ryb/mEwL1IkGNG4TJF86Oi3wuQvF8tPX6vaS5ft4zae310ixDDEFsnD5VV+qWgA6UBkoCNjo+0YZwdLLCgOBkz/b68bw7YM4dzK3Py6sbbbhBIJ0t1QI8wuT0/FFP6OsDbkawwO1wxduRausTlLjEgECll4pipWmf1Q54Q1CpQ0R68mUeatdkks/LwBKBCTENu9DAWDjnRE=
+  # Docker Credentials
+  - secure: NRLY7D93Sf8NHDGogA3Y06WBU08gEVHc52zsRIXVXRkyU2zYJMaDvGJvshxupjFkSRvT+23HlzVxfxU0rFldv5SugBIZ3XsCiHr/RlHuKGX2YYxb/qImoXpmmNe/ZEJLb0IElmGSHdwfN7aoDF/Z6lzKC89gXbK4QQphsQunnzgFiN9UCLa1IYPlQMyfhhILGbDDzBg4CKOuEehw2KVg2NjcYV9SlThBesVfdjtQV6P3QxX1wO77FDlF+q/F36/Ox/UKQJe0PAGmeuS3Bu9JQQcNGg8lQf7BMeAFiY/JOQx7ViFpbahMovEiuNVgV3WmpqJM6Q/nW2btfcJz7AtthcDx0lmG5+ZTsV/5R1p+5+z/giHplERT6QKpysywVo5vJ5ky05DHxU+8CcAOqozE8ljsbImvkpFVfmbFPuyFWb+pDGpl0Fv2BQu0qCwke0jwBjcBt8kOl2WuxhRhnD/py11fyC2ysE0ncd5SCY9GqLd/++7vrOMUvncY92R9rw14JBFRNe4pz/HfNuMb+Vt48QAQhtMxEiW/gaipVMN97LqfypC0uY6laNvVFO9RpNgkSwuVWARKFW7MkCl7r7HWVeTYQh3dSJoRMKN8C8jx1ZmFjXbrrMyZUAwCkjJycSatP/hukWsiGe6oIwrjb7CazxWBVvtmNMSkUHCMOMN5/zg=
+before_install:
+- curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64
+  > ./cc-test-reporter
+- chmod +x ./cc-test-reporter
+- gem install bundler
+before_script:
+- "./cc-test-reporter before-build"
 after_success:
-  - bundle exec codeclimate-test-reporter
+- "./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT"
+- echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+- docker build -t pincambodia/somleng-adhearsion:latest "https://github.com/$TRAVIS_REPO_SLUG.git#$TRAVIS_BRANCH"
+- docker push pincambodia/somleng-adhearsion
 deploy:
-  - provider: elasticbeanstalk
-    edge: true
-    access-key-id:
-      secure: "ds7G9QYKTRufksa2Dq6IrnsqzR6kVV+2+xNAi4QoaHf9te8boemJXIzdcgrLk03LmmFJ9s/uCqQcAu3lOCfvpHq5rCveOiNsf++KdKw1JWXomV9KqSnT1PUWUklUBzWMTnf/aNg1F7XPJAMgIGdu39xiLVuw7EM1ROWbswW6pr7eYVhtIHJHNCFoGicvT9tfO9kSnF1cfrK0QB03xWqbpaaFsZc7Lm4t98TzRg7kyPoSgrFgQwmZ6bt/mt7oKlay+HzOnZ6L1oy0QZFTd7IrcfopuuJa8kcYb0RkOviS5xcimjy3Tiewi7FDsecSbfLl8Q4Emd2iu17zK4+kwZLzznuPTot+szcvkLu5n7K7FTfcy2Ls5C+g+nNWuxeXnEmkRBHvbKLmwSZyb528HZnE1gbEknaeos+FZBkXkZ5CwtEgYfpimn2X0mpC/32i8k/J07II2aEHA7d7tVUYf0ghQeBtFsYmkhBxUW1WQSLfN4a+lXZuXKNafqpPlPQCpBPzL6SDyYkIbNawS233jqOTp0Xjt4eChqB03UBrdY0YQZU/LhDeHy50QBhH3WwgRZBtwrrNLu9GJ9qlvT/O41qvZ669mrCYPLr7N6O738Y8xHdeHj8yYzzWWqT7q91bz5hH8PhBeDbOBa+Q9+/IDHK0j5alyLuwFuFCjR02axjXBaU="
-    secret-access-key:
-      secure: "HS9vs2KeBNoXzJ0rS65nW0XGr1CaktJpZs51gL4kb5MHNfuqDSFftxkMQqBe4bKp1ToS3RN8jSkr4SigcTSW0VQyEZiV1x53uFUW1jIa0OotgUkfkYKLxKv8GGp4sk+17OT+sHlyY/bZOUAFjbIX4e5fI6l9MXCE2IZ/2UAoqBOsZrEtukPL7NuRpEL2AgRpO+tNM23yUmXuBFDRfu+RQ7icFPkyIRNZO9i0MwkoV9VBDj7cR1jm1dBNrZqjQFzO2swPrL+dktpYwFZiKGGQW2td563y/JidUrOnuroAIHtC4poY3F9a0Pkut+b0kYiv9S0VBHYH2Z0rlHV2uieYB9RlqCEdxVW+NVoSvrPHXnDG1YEJZM1+6a6T0nr0rv+9W7JEKvUTTmZS1WNUmvUK5PoJO+4CynqcPQUMaQ3b8kIQWSBVj7yLnKlSApQpm/exyJUTCDWJBhuUiHAsCFG8QR84gIbyto50k298EkpunfThnj2NpQk8NHIDnfpwdshjWXhvf/1eTBmNd10GZoSTwAI+g01dhdQ8SF3dDDY0sdWCmzxNvss9gZ6C+9TABzfUbbRF9PHixbu4I616ihIQ+saO5Su6zk30A5rNSnaKlX/CBeld/S418RNU8lEMGetIdgMTx7PGhfcEBCr2iM2iItE4X6xEWTtSHAN5UAfD9jI="
-    region: ap-southeast-1
-    app: somleng
-    env: somleng-production
-    bucket_name: pin-somlengci
-    on:
-      repo: somleng/somleng
-      branch: somleng.ews1294.info
-      condition: $DOCKER = 1
+- provider: elasticbeanstalk
+  app: somleng-adhearsion
+  env: somleng-adhearsion-webserver
+  region: ap-southeast-1
+  bucket_name: deploy.ews1294.info
+  on:
+    branch: master

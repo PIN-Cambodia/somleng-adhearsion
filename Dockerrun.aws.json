@@ -3,9 +3,9 @@
   "containerDefinitions": [
     {
       "name": "somleng",
-      "image": "dwilkie/somleng",
+      "image": "pincambodia/somleng-adhearsion",
       "essential": true,
-      "memory": 950,
+      "memoryReservation": 1024,
       "portMappings": [
         {
           "hostPort": 9050,
@@ -14,19 +14,13 @@
         }
       ],
       "logConfiguration": {
-          "logDriver": "awslogs",
-          "options": {
-              "awslogs-group": "awslogs-adhearsion",
-              "awslogs-region": "ap-southeast-1",
-              "awslogs-stream-prefix": "awslogs-adhearsion"
-          }
-      },
-      "environment": [
-        {
-          "name": "ADHEARSION_CONFIG_S3_PATH",
-          "value": "s3://somlengsecrets/somleng_config.txt"
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-create-group": true,
+          "awslogs-group": "/aws/elasticbeanstalk/somleng-adhearsion-webserver/adhearsion.log",
+          "awslogs-region": "ap-southeast-1"
         }
-      ]
+      }
     }
   ]
 }
